@@ -1,19 +1,43 @@
 {
-  "info": {
-    "_postman_id": "a38b88ae-d336-4cd3-b46d-5b155ba3435f",
-    "name": "Pruebas_Testkube",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "50356757",
-    "_collection_link": "https://go.postman.co/collection/50356757-a38b88ae-d336-4cd3-b46d-5b155ba3435f?source=collection_link"
-  },
-  "item": [
-    {
-      "name": "New Request",
-      "request": {
-        "method": "GET",
-        "header": []
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "testkube-fix-001",
+		"name": "Pruebas Linktic Testkube",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verificar API Publica",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
